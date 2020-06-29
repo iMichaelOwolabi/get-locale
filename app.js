@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
 
   const { ip } = req;
+
+  console.log(ip);
   
   const apiCall = unirest(
 
