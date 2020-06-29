@@ -11,7 +11,9 @@ app.get('/', (req, res) => {
 
   const { ip } = req;
 
-  console.log(ip, '=============');
+  var ips = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+  console.log(ip, '=============', ips);
   
   const apiCall = unirest(
 
