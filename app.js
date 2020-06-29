@@ -8,18 +8,14 @@ const port = process.env.PORT || 3000;
 
 
 app.get('/', (req, res) => {
-
-  const { ip } = req;
-
-  var ips = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-
-  console.log(ip, '=============', ips);
   
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
   const apiCall = unirest(
 
     "GET",
  
-    `https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/${ips}`
+    `https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/${ip}`
  
   );
  
