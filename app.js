@@ -8,12 +8,14 @@ const port = process.env.PORT || 3000;
 
 
 app.get('/', (req, res) => {
+
+  const { ip } = req;
   
   const apiCall = unirest(
 
     "GET",
  
-    "https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/"
+    `https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/${ip}`
  
   );
  
