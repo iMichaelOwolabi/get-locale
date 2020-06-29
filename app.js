@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
     "GET",
  
-    `https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/${ip}`
+    `https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/${ips}`
  
   );
  
