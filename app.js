@@ -6,7 +6,6 @@ const app = express();
 const ipWhoisKey = process.env.IP_WHOIS_KEY;
 const port = process.env.PORT || 3000;
 
-
 app.get('/', (req, res) => {
   
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -33,7 +32,7 @@ app.get('/', (req, res) => {
  
     console.log(result.body);
  
-    res.send(result.body);
+    res.send('Happy to see you here');
  
   });
 
