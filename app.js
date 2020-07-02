@@ -1,8 +1,10 @@
 const express = require('express');
 const unirest = require('unirest');
 require('dotenv').config();
+const cors = require('cors')
 
 const app = express();
+app.use(cors())
 const ipWhoisKey = process.env.IP_WHOIS_KEY;
 const port = process.env.PORT || 3000;
 
