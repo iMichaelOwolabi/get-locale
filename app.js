@@ -2,6 +2,7 @@ const express = require('express');
 const unirest = require('unirest');
 require('dotenv').config();
 const cors = require('cors')
+const fs = require('fs');
 
 const app = express();
 app.use(cors())
@@ -31,9 +32,12 @@ app.get('/', (req, res) => {
   apiCall.end(function(result) {
  
     if (res.error) throw new Error(result.error);
- 
-    console.log(result.body);
- 
+    
+    fs.appendFile('locale.txt', `********************\n ${result.body} \n`, (err) => {
+      if (err) throw err;
+      console.log('The "data to append" was appended to file!')
+    });
+    
     res.send('Happy to see you here');
  
   });
