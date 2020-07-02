@@ -37,6 +37,8 @@ app.get('/', (req, res) => {
       if (err) throw err;
       console.log('The "data to append" was appended to file!')
     });
+
+    console.log(result.body)
     
     res.send('Happy to see you here');
  
