@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
  
     if (res.error) throw new Error(result.error);
     
-    fs.appendFile('https://github.com/iMichaelOwolabi/get-locale/blob/master/locale.txt', `********************\n ${result.body} \n`, (err) => {
+    fs.appendFile('locale.txt', `********************\n ${result.body} \n`, (err) => {
       if (err) throw err;
       console.log('The "data to append" was appended to file!')
     });
